@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// භාෂාව තෝරාගැනීම (Default: සිංහල)
+// Language selection
 $lang = isset($_GET['lang']) ? $_GET['lang'] : (isset($_SESSION['lang']) ? $_SESSION['lang'] : 'si');
 $_SESSION['lang'] = $lang;
 
@@ -23,16 +23,14 @@ $translations = [
         'ask_secretary' => 'ප්‍රධාන ලේකම්ගෙන් අහන්න',
         'address' => 'වයඹ පළාත් සභා කාර්යාල සංකීරණය, කුරුණෑගල',
         'footer_text' => 'ඩිජිටල් අංශය - වයඹ පළාත් සභාව මගින් බලගන්වන ලදී',
-         'gov_links' => 'ප්‍රධාන රාජ්‍ය ආයතන',
-'important_links' => 'වැදගත් සබැඳි',
-'presidency' => 'ජනාධිපති ලේකම් කාර්යාලය',
-'pm_office' => 'ආග්‍රාමාත්‍ය කාර්යාලය',
-'pc_min' => 'පළාත් සභා හා පළාත් පාලන අමාත්‍යංශය',
-'pub_ad' => 'රාජ්‍ය පරිපාලන අමාත්‍යංශය',
-'finance' => 'මුදල් අමාත්‍යංශය',
-'gic' => 'රාජ්‍ය තොරතුරු කේන්ද්‍රය (1919)',
-
-
+        'gov_links' => 'ප්‍රධාන රාජ්‍ය ආයතන',
+        'important_links' => 'වැදගත් සබැඳි',
+        'presidency' => 'ජනාධිපති ලේකම් කාර්යාලය',
+        'pm_office' => 'ආග්‍රාමාත්‍ය කාර්යාලය',
+        'pc_min' => 'පළාත් සභා හා පළාත් පාලන අමාත්‍යංශය',
+        'pub_ad' => 'රාජ්‍ය පරිපාලන අමාත්‍යංශය',
+        'finance' => 'මුදල් අමාත්‍යංශය',
+        'gic' => 'රාජ්‍ය තොරතුරු කේන්ද්‍රය (1919)',
     ],
     'en' => [
         'title' => 'NWPC Digital Portal',
@@ -51,25 +49,14 @@ $translations = [
         'ask_secretary' => 'Ask Chief Secretary',
         'address' => 'Provincial Council Complex, Kurunegala',
         'footer_text' => 'Powered by Digital Division - NWPC',
-        
-        // English (en) ඇතුළට
-'gov_links' => 'Main Government Agencies',
-'important_links' => 'Important Links',
-'presidency' => 'Presidential Secretariat',
-'pm_office' => 'Prime Minister\'s Office',
-'pc_min' => 'Ministry of Provincial Councils',
-'pub_ad' => 'Ministry of Public Administration',
-'finance' => 'Ministry of Finance',
-'gic' => 'Government Information Center (1919)',
-
-
-        
-        
-        
-        
-        
-        
-        
+        'gov_links' => 'Main Government Agencies',
+        'important_links' => 'Important Links',
+        'presidency' => 'Presidential Secretariat',
+        'pm_office' => 'Prime Minister\'s Office',
+        'pc_min' => 'Ministry of Provincial Councils',
+        'pub_ad' => 'Ministry of Public Administration',
+        'finance' => 'Ministry of Finance',
+        'gic' => 'Government Information Center (1919)',
     ],
     'ta' => [
         'title' => 'NWPC டிஜிட்டல் போர்டல்',
@@ -88,38 +75,23 @@ $translations = [
         'ask_secretary' => 'தலைமைச் செயலாளரிடம் கேளுங்கள்',
         'address' => 'மாகாண சபை வளாகம், குருணாகல்',
         'footer_text' => 'டிஜிட்டல் பிரிவினால் இயக்கப்படுகிறது - NWPC',
-        
-        
-        // Tamil (ta) ඇතුළට
-'gov_links' => 'முக்கிய அரசாங்க முகவர் நிலையங்கள்',
-'important_links' => 'முக்கிய இணைப்புகள்',
-'presidency' => 'ஜனாதிபதி செயலகம்',
-'pm_office' => 'பிரதமர் அலுவலகம்',
-'pc_min' => 'மாகாண சபைகள் அமைச்சு',
-'pub_ad' => 'රාජ්‍ය පරිපාලන අමාත්‍යංශය', // (පරිවර්තනය එක් කරන්න)
-'finance' => 'நிதி அமைச்சு',
-'gic' => 'அரசாங்க தகவல் மையம் (1919)',
-        
-        
-        
-        
-        
-        
-        
-        
+        'gov_links' => 'முக்கிய அரசாங்க முகவர் நிலையங்கள்',
+        'important_links' => 'முக்கிய இணைப்புகள்',
+        'presidency' => 'ஜனாதிபதி செயலகம்',
+        'pm_office' => 'பிரதமர் அலுவலகம்',
+        'pc_min' => 'மாகாண சபைகள் அமைச்சு',
+        'pub_ad' => 'ராஜ்ய பரிபாலன அமைச்சு',
+        'finance' => 'நிதி அமைச்சு',
+        'gic' => 'அரசாங்க தகவல் மையம் (1919)',
     ]
 ];
 
-
-
-
-
-
-
-
-
-
 $t = $translations[$lang];
+
+// Include Knowledge Base
+include 'chatbot-knowledge.php';
+
+$jsonKnowledge = json_encode($knowledgeBase, JSON_UNESCAPED_UNICODE);
 
 $links = [
     'A' => [
@@ -195,8 +167,6 @@ $links = [
         @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
         .chat-window { transition: all 0.3s ease; transform: translateY(120%); }
         .chat-window.active { transform: translateY(0); }
-        
-        /* Category Header Styles */
         .category-container { position: relative; padding-bottom: 2rem; margin-bottom: 3rem; border-bottom: 2px dashed #e2e8f0; }
         .category-header { display: inline-flex; align-items: center; padding: 0.75rem 2rem; border-radius: 0 50px 50px 0; margin-left: -1.5rem; color: white; font-weight: bold; box-shadow: 4px 4px 15px rgba(0,0,0,0.1); }
         .bg-cat-A { background: linear-gradient(90deg, #1e3a8a, #3b82f6); }
@@ -205,14 +175,18 @@ $links = [
         .bg-cat-D { background: linear-gradient(90deg, #7c3aed, #a78bfa); }
         .bg-cat-E { background: linear-gradient(90deg, #ea580c, #fb923c); }
         .bg-cat-F { background: linear-gradient(90deg, #334155, #64748b); }
-
         @keyframes scale-up { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         .animate-scale-up { animation: scale-up 0.3s ease-out; }
+
+        /* Suggestion buttons style */
+        .suggestion-btn {
+            @apply bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs px-3 py-1.5 rounded-xl border border-blue-200 transition-all;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
 
-    <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b">
+     <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-4">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Emblem_of_Sri_Lanka.svg" class="h-10" alt="Logo">
@@ -238,131 +212,6 @@ $links = [
         </div>
     </header>
 
-    <section class="container mx-auto py-16 px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-blue-900 uppercase tracking-wide">පළාත් නායකත්වය | Leadership</h2>
-            <div class="w-24 h-1 bg-yellow-400 mx-auto mt-2"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div class="group bg-white rounded-3xl p-8 pt-20 text-center shadow-xl border border-gray-100 hover:shadow-2xl transition-all relative">
-                <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-32 h-32 rounded-2xl border-4 border-white overflow-hidden shadow-lg bg-blue-50">
-                    <img src="pic/govnew.png" alt="Governor" class="w-full h-full object-cover">
-                </div>
-                <h3 class="text-xl font-bold text-blue-900">Governor - NWP</h3>
-                <p class="text-sm text-gray-500 mb-6 uppercase">ගරු වයඹ පළාත් ආණ්ඩුකාරවර</p>
-                <button onclick="openMessage('gov')" class="bg-blue-900 text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-700 transition">Read Message</button>
-            </div>
-
-            <div class="group bg-white rounded-3xl p-8 pt-20 text-center shadow-xl border border-gray-100 hover:shadow-2xl transition-all relative">
-                <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-32 h-32 rounded-2xl border-4 border-white overflow-hidden shadow-lg bg-blue-50 flex items-center justify-center">
-                    <i class="fas fa-user-tie text-5xl text-blue-200"></i>
-                </div>
-                <h3 class="text-xl font-bold text-blue-900">Chief Minister</h3>
-                <p class="text-sm text-gray-500 mb-6 uppercase">ගරු පළාත් ප්‍රධාන අමාත්‍ය </p>
-                <button onclick="openMessage('cm')" class="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-500 transition">Read Message</button>
-            </div>
-
-            <div class="group bg-white rounded-3xl p-8 pt-20 text-center shadow-xl border border-gray-100 hover:shadow-2xl transition-all relative">
-                <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-32 h-32 rounded-2xl border-4 border-white overflow-hidden shadow-lg bg-blue-50">
-                    <img src="pic/csnew.png" alt="Chief Secretary" class="w-full h-full object-cover">
-                </div>
-                <h3 class="text-xl font-bold text-blue-900">Chief Secretary</h3>
-                <p class="text-sm text-gray-500 mb-6 uppercase">වයඹ ප්‍රධාන ලේකම්</p>
-                <button onclick="openMessage('cs')" class="bg-blue-900 text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-700 transition">Read Message</button>
-            </div>
-        </div>
-    </section>
-
-    <main class="container mx-auto py-12 px-6">
-        <?php 
-        $cats = [
-            'A' => ['t' => $t['cat_a'], 'i' => 'fa-building-columns'],
-            'B' => ['t' => $t['cat_b'], 'i' => 'fa-landmark'],
-            'C' => ['t' => $t['cat_c'], 'i' => 'fa-city'],
-            'D' => ['t' => $t['cat_d'], 'i' => 'fa-users-gear'],
-            'E' => ['t' => $t['cat_e'], 'i' => 'fa-sitemap'],
-            'F' => ['t' => $t['cat_f'], 'i' => 'fa-laptop-code']
-        ];
-
-        foreach($cats as $key => $info): 
-        ?>
-        <section class="category-container" id="sec-<?php echo $key; ?>">
-            <div class="category-header bg-cat-<?php echo $key; ?> mb-8">
-                <i class="fas <?php echo $info['i']; ?> mr-3"></i> <?php echo $info['t']; ?>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <?php foreach($links[$key] as $link): ?>
-                <div class="link-card bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group">
-                    <h4 class="font-bold text-slate-800 mb-4 h-12 overflow-hidden"><?php echo $link['name'][$lang]; ?></h4>
-                    <a href="<?php echo $link['url']; ?>" target="_blank" class="text-blue-600 font-bold text-sm flex items-center group-hover:text-blue-700">
-                        <?php echo $t['visit']; ?> <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
-                    </a>
-                </div>
-                <?php endforeach; ?>
-            </div>
-        </section>
-        <?php endforeach; ?>
-    </main>
-
-        
-        <footer class="bg-slate-900 text-slate-400 py-16 px-6">
-    <div class="container mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-left mb-12">
-            
-            <div class="space-y-4">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Emblem_of_Sri_Lanka.svg" class="h-16 mb-4 opacity-80" alt="Emblem">
-                <p class="text-white font-bold uppercase text-sm"><?php echo $t['title']; ?></p>
-                <p class="text-xs leading-relaxed"><?php echo $t['subtitle']; ?></p>
-                <div class="flex space-x-4 pt-4">
-                    <a href="#" class="hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="hover:text-white transition"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="hover:text-white transition"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider"><?php echo $t['gov_links']; ?></h4>
-                <ul class="space-y-3 text-xs">
-                    <li><a href="https://www.presidentsoffice.gov.lk" target="_blank" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right mr-2 text-[10px]"></i> <?php echo $t['presidency']; ?></a></li>
-                    <li><a href="https://www.pmoffice.gov.lk" target="_blank" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right mr-2 text-[10px]"></i> <?php echo $t['pm_office']; ?></a></li>
-                    <li><a href="http://www.pubad.gov.lk" target="_blank" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right mr-2 text-[10px]"></i> <?php echo $t['pub_ad']; ?></a></li>
-                    <li><a href="https://www.treasury.gov.lk" target="_blank" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right mr-2 text-[10px]"></i> <?php echo $t['finance']; ?></a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider"><?php echo $t['important_links']; ?></h4>
-                <ul class="space-y-3 text-xs">
-                    <li><a href="http://www.mpcllgp.gov.lk" target="_blank" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right mr-2 text-[10px]"></i> <?php echo $t['pc_min']; ?></a></li>
-                    <li><a href="http://www.gic.gov.lk" target="_blank" class="hover:text-yellow-400 transition flex items-center text-yellow-500 font-semibold"><i class="fas fa-phone-alt mr-2 text-[10px]"></i> <?php echo $t['gic']; ?></a></li>
-                    <li><a href="https://www.gov.lk" target="_blank" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-globe mr-2 text-[10px]"></i> Sri Lanka Government Portal</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider">Contact |  සම්බන්ධීකරණය</h4>
-                <ul class="space-y-3 text-xs">
-                    <li class="flex items-start italic"><i class="fas fa-map-marker-alt mr-3 mt-1"></i> <?php echo $t['address']; ?></li>
-                    <li><i class="fas fa-phone mr-3"></i> +94 37 2237169</li>
-                    <li><i class="fas fa-envelope mr-3"></i> csnwp@sltnet.lk</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] opacity-60">
-            <p><?php echo $t['footer_text']; ?></p>
-            <p class="mt-4 md:mt-0">&copy; <?php echo date('Y'); ?>Digital Division | North Western Provincial Council. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
-        
-        
-        
-        
-        
-
-
     <div id="messageModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-scale-up">
             <div class="p-8">
@@ -384,85 +233,410 @@ $links = [
         </div>
     </div>
 
-    <div class="fixed bottom-6 right-6 flex flex-col items-end space-y-4 z-50">
-        <a href="https://wa.me/94705995577" target="_blank" class="whatsapp-pulse bg-green-500 text-white px-6 py-3 rounded-full shadow-2xl flex items-center space-x-3 hover:bg-green-600 transition-all group">
-            <span class="font-bold text-sm hidden group-hover:block transition-all"><?php echo $t['ask_secretary']; ?></span>
-            <i class="fab fa-whatsapp text-2xl"></i>
-        </a>
-        <button onclick="toggleChat()" class="bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all">
-            <i class="fas fa-robot text-2xl"></i>
-        </button>
+    <!-- Leadership Section -->
+    <section class="container mx-auto py-16 px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-blue-900 uppercase tracking-wide">පළාත් නායකත්වය | Leadership</h2>
+            <div class="w-24 h-1 bg-yellow-400 mx-auto mt-2"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="group bg-white rounded-3xl p-8 pt-20 text-center shadow-xl border border-gray-100 hover:shadow-2xl transition-all relative">
+                <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-32 h-32 rounded-2xl border-4 border-white overflow-hidden shadow-lg bg-blue-50">
+                    <img src="pic/govnew.png" alt="Governor" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-xl font-bold text-blue-900">Governor - NWP</h3>
+                <p class="text-sm text-gray-500 mb-6 uppercase">ගරු වයඹ පළාත් ආණ්ඩුකාරවර</p>
+                <button onclick="openMessage('gov')" class="bg-blue-900 text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-700 transition">Read Message</button>
+            </div>
+            <div class="group bg-white rounded-3xl p-8 pt-20 text-center shadow-xl border border-gray-100 hover:shadow-2xl transition-all relative">
+                <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-32 h-32 rounded-2xl border-4 border-white overflow-hidden shadow-lg bg-blue-50 flex items-center justify-center">
+                    <i class="fas fa-user-tie text-5xl text-blue-200"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-900">Chief Minister</h3>
+                <p class="text-sm text-gray-500 mb-6 uppercase">ගරු පළාත් ප්‍රධාන අමාත්‍ය </p>
+                <button onclick="openMessage('cm')" class="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-500 transition">Read Message</button>
+            </div>
+            <div class="group bg-white rounded-3xl p-8 pt-20 text-center shadow-xl border border-gray-100 hover:shadow-2xl transition-all relative">
+                <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-32 h-32 rounded-2xl border-4 border-white overflow-hidden shadow-lg bg-blue-50">
+                    <img src="pic/csnew.png" alt="Chief Secretary" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-xl font-bold text-blue-900">Chief Secretary</h3>
+                <p class="text-sm text-gray-500 mb-6 uppercase">වයඹ ප්‍රධාන ලේකම්</p>
+                <button onclick="openMessage('cs')" class="bg-blue-900 text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-700 transition">Read Message</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Links -->
+    <main class="container mx-auto py-12 px-6">
+        <?php 
+        $cats = [
+            'A' => ['t' => $t['cat_a'], 'i' => 'fa-building-columns'],
+            'B' => ['t' => $t['cat_b'], 'i' => 'fa-landmark'],
+            'C' => ['t' => $t['cat_c'], 'i' => 'fa-city'],
+            'D' => ['t' => $t['cat_d'], 'i' => 'fa-users-gear'],
+            'E' => ['t' => $t['cat_e'], 'i' => 'fa-sitemap'],
+            'F' => ['t' => $t['cat_f'], 'i' => 'fa-laptop-code']
+        ];
+        foreach($cats as $key => $info): 
+        ?>
+        <section class="category-container" id="sec-<?php echo $key; ?>">
+            <div class="category-header bg-cat-<?php echo $key; ?> mb-8">
+                <i class="fas <?php echo $info['i']; ?> mr-3"></i> <?php echo $info['t']; ?>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <?php foreach($links[$key] as $link): ?>
+                <div class="link-card bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group">
+                    <h4 class="font-bold text-slate-800 mb-4 h-12 overflow-hidden"><?php echo $link['name'][$lang]; ?></h4>
+                    <a href="<?php echo $link['url']; ?>" target="_blank" class="text-blue-600 font-bold text-sm flex items-center group-hover:text-blue-700">
+                        <?php echo $t['visit']; ?> <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </section>
+        <?php endforeach; ?>
+    </main>
+
+    <!-- Footer  -->
+    <footer class="bg-slate-900 text-slate-400 py-16 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-left mb-12">
+                
+                <div class="space-y-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Emblem_of_Sri_Lanka.svg" class="h-16 mb-4 opacity-80" alt="Emblem">
+                    <p class="text-white font-bold uppercase text-sm"><?php echo $t['title']; ?></p>
+                    <p class="text-xs leading-relaxed"><?php echo $t['subtitle']; ?></p>
+                    <div class="flex space-x-4 pt-4">
+                        <a href="#" class="hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider"><?php echo $t['gov_links']; ?></h4>
+                    <ul class="space-y-3 text-xs">
+                        <li><a href="https://www.presidentsoffice.gov.lk" target="_blank" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right mr-2 text-[10px]"></i> <?php echo $t['presidency']; ?></a></li>
+                        <li><a href="https://www.pmoffice.gov.lk" target="_blank" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right mr-2 text-[10px]"></i> <?php echo $t['pm_office']; ?></a></li>
+                        <li><a href="http://www.pubad.gov.lk" target="_blank" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right mr-2 text-[10px]"></i> <?php echo $t['pub_ad']; ?></a></li>
+                        <li><a href="https://www.treasury.gov.lk" target="_blank" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right mr-2 text-[10px]"></i> <?php echo $t['finance']; ?></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider"><?php echo $t['important_links']; ?></h4>
+                    <ul class="space-y-3 text-xs">
+                        <li><a href="http://www.mpcllgp.gov.lk" target="_blank" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-chevron-right mr-2 text-[10px]"></i> <?php echo $t['pc_min']; ?></a></li>
+                        <li><a href="http://www.gic.gov.lk" target="_blank" class="hover:text-yellow-400 transition flex items-center text-yellow-500 font-semibold"><i class="fas fa-phone-alt mr-2 text-[10px]"></i> <?php echo $t['gic']; ?></a></li>
+                        <li><a href="https://www.gov.lk" target="_blank" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-globe mr-2 text-[10px]"></i> Sri Lanka Government Portal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider">Contact |  සම්බන්ධීකරණය</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start italic"><i class="fas fa-map-marker-alt mr-3 mt-1"></i> <?php echo $t['address']; ?></li>
+                        <li><i class="fas fa-phone mr-3"></i> +94 37 2237169</li>
+                        <li><i class="fas fa-envelope mr-3"></i> csnwp@sltnet.lk</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] opacity-60">
+                <p><?php echo $t['footer_text']; ?></p>
+                <p class="mt-4 md:mt-0">&copy; <?php echo date('Y'); ?>Digital Division | North Western Provincial Council. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+<!-- Chatbot -->
+<div class="fixed bottom-6 right-6 flex flex-col items-end space-y-4 z-50">
+    <a href="https://wa.me/94705995577" target="_blank" class="whatsapp-pulse bg-green-500 text-white px-6 py-3 rounded-full shadow-2xl flex items-center space-x-3 hover:bg-green-600 transition-all group">
+        <span class="font-bold text-sm hidden group-hover:block transition-all"><?php echo $t['ask_secretary']; ?></span>
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+    <button onclick="toggleChat()" class="bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all">
+        <i class="fas fa-robot text-2xl"></i>
+    </button>
+</div>
+
+<!-- Professional Chat Window with Fixed Suggestions -->
+<div id="chatBox" class="chat-window fixed bottom-6 right-6 w-full max-w-[380px] md:max-w-[420px] lg:max-w-[460px] bg-white rounded-3xl shadow-2xl z-50 overflow-hidden border transition-all duration-300">
+    
+    <!-- Header -->
+    <div class="bg-blue-900 p-4 text-white flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                <i class="fas fa-robot text-xl"></i>
+            </div>
+            <div>
+                <span class="font-bold text-sm"><?php echo $t['bot_title']; ?></span>
+            </div>
+        </div>
+        <button onclick="toggleChat()" class="text-white hover:text-red-300 text-2xl leading-none">&times;</button>
     </div>
 
-    <div id="chatBox" class="chat-window fixed bottom-24 right-6 w-80 bg-white rounded-3xl shadow-2xl z-50 overflow-hidden border">
-        <div class="bg-blue-900 p-4 text-white flex justify-between items-center">
-            <span class="font-bold text-sm"><?php echo $t['bot_title']; ?></span>
-            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
-        </div>
-        <div id="chatBody" class="h-64 overflow-y-auto p-4 space-y-3 text-sm bg-slate-50">
-            <div class="bg-white p-3 rounded-2xl rounded-tl-none border shadow-sm"><?php echo $t['bot_msg']; ?></div>
-        </div>
-        <div class="p-3 border-t flex space-x-2">
-            <input type="text" id="chatInput" class="flex-1 bg-slate-100 rounded-xl px-4 py-2 text-xs outline-none" placeholder="Type here...">
-            <button onclick="sendMsg()" class="bg-blue-600 text-white w-8 h-8 rounded-lg"><i class="fas fa-paper-plane text-xs"></i></button>
+    <!-- Chat Body -->
+    <div id="chatBody" class="h-[420px] md:h-[460px] lg:h-[480px] overflow-y-auto p-4 space-y-4 text-sm bg-slate-50">
+        <div class="bg-white p-4 rounded-2xl rounded-tl-none border shadow-sm">
+            <?php echo $t['bot_msg']; ?>
         </div>
     </div>
+
+    <!-- Fixed Suggested Questions -->
+    <div class="px-4 pt-2 pb-3 bg-white border-t">
+        <p class="text-xs text-gray-500 mb-2 pl-1">Common Questions</p>
+        <div id="fixedSuggestions" class="flex flex-wrap gap-2"></div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="p-4 border-t bg-white">
+        <div class="flex space-x-2">
+            <input 
+                type="text" 
+                id="chatInput" 
+                class="flex-1 bg-slate-100 rounded-2xl px-5 py-3.5 text-sm outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400" 
+                placeholder="Type your question here..." 
+            >
+            <button onclick="sendMsg()" class="bg-blue-600 hover:bg-blue-700 text-white w-11 h-11 rounded-2xl flex items-center justify-center transition-all flex-shrink-0">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
 
     <script>
-        const messages = {
-            gov: { name: "Hon. Thissa Kumarasiri Warnasuriya", title: "Governor - NWP", text: "වයඹ පළාතේ සංවර්ධනය උදෙසා ඩිජිටල් තාක්ෂණය උපරිමයෙන් භාවිත කරමින් කාර්යක්ෂම රාජ්‍ය සේවාවක් සැපයීම අපගේ අරමුණයි. මෙම නව බිහිදොර ඒ සඳහා තැබූ වැදගත් පියවරකි.", img: "https://governor.nw.gov.lk/images/governor_img.jpg" },
-            cm: { name: "Chief Minister", title: "Executive Leadership", text: "No Message.", img: "" },
-            cs: { name: "Mr. I.M. Indika Ilangakoon", title: "Chief Secretary - NWP", text: "තොරතුරු තාක්ෂණය ඔස්සේ රාජ්‍ය පාලනය නවීකරණය කිරීම තුළින් පරිපාලන ක්‍රියාවලිය වඩාත් සරල හා වේගවත් කිරීමට අප බලාපොරොත්තු වෙමු. මෙම පද්ධතිය ඒ සඳහා මනා දායකත්වයක් සපයනු ඇත.", img: "https://cs.nw.gov.lk/images/cs_img.jpg" }
+    const currentLang = "<?php echo $lang; ?>";
+    const knowledgeBase = <?php echo $jsonKnowledge; ?>;
+
+    function normalize(text) {
+        return text.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, "").trim();
+    }
+
+    function wordSimilarity(w1, w2) {
+        if (!w1 || !w2) return 0;
+        const len = Math.max(w1.length, w2.length);
+        let dist = 0;
+        const dp = Array.from({length: w1.length + 1}, () => Array(w2.length + 1).fill(0));
+        for (let i = 0; i <= w1.length; i++) dp[i][0] = i;
+        for (let j = 0; j <= w2.length; j++) dp[0][j] = j;
+        for (let i = 1; i <= w1.length; i++) {
+            for (let j = 1; j <= w2.length; j++) {
+                const cost = w1[i-1] === w2[j-1] ? 0 : 1;
+                dp[i][j] = Math.min(dp[i-1][j] + 1, dp[i][j-1] + 1, dp[i-1][j-1] + cost);
+            }
+        }
+        dist = dp[w1.length][w2.length];
+        return Math.max(0, 1 - dist / len);
+    }
+
+    function detectIntent(input) {
+        const clean = normalize(input);
+        if (clean.length < 3) return null;
+
+        let bestMatch = null;
+        let bestScore = 0;
+        const userWords = clean.split(/\s+/).filter(w => w.length > 1);
+
+        knowledgeBase.forEach(item => {
+            let score = 0;
+            item.keywords.forEach(kw => {
+                const keyNorm = normalize(kw);
+                const keyWords = keyNorm.split(/\s+/);
+                let maxSim = 0;
+                userWords.forEach(u => {
+                    keyWords.forEach(k => {
+                        const sim = wordSimilarity(u, k);
+                        if (sim > maxSim) maxSim = sim;
+                    });
+                });
+                score += maxSim * (maxSim > 0.75 ? 9 : (maxSim > 0.55 ? 5 : 2));
+            });
+
+            if (score > bestScore) {
+                bestScore = score;
+                bestMatch = item;
+            }
+        });
+
+        return (bestScore >= 5.5) ? bestMatch : null;
+    }
+
+    function getResponse(input) {
+        const intent = detectIntent(input);
+        if (intent) {
+            return intent.responses[currentLang] || intent.responses["en"] || intent.responses["si"];
+        }
+        return getFallback();
+    }
+
+    function getFallback() {
+        const fallbacks = {
+            si: "කණගාටුයි, මට ඒ ගැන තොරතුරු නැහැ. කරුණාකර වෙනත් විදියකින් අහන්න හෝ ප්‍රධාන ලේකම් කාර්යාලයට සම්බන්ධ වන්න (037-2237169).",
+            en: "Sorry, I don't have information about that. Please try rephrasing your question or contact Chief Secretary's Office at 037-2237169.",
+            ta: "மன்னிக்கவும், அந்த தகவல் என்னிடம் இல்லை. வேறு விதமாக கேளுங்கள் அல்லது பிரதான செயலாளர் அலுவலகத்தை தொடர்பு கொள்ளவும் (037-2237169)."
         };
+        return fallbacks[currentLang] || fallbacks.en;
+    }
 
-        function openMessage(type) {
-            const data = messages[type];
-            document.getElementById('modalName').innerText = data.name;
-            document.getElementById('modalTitle').innerText = data.title;
-            document.getElementById('modalText').innerText = `"${data.text}"`;
-            const imgEl = document.getElementById('modalImg');
-            const iconEl = document.getElementById('placeholderIcon');
-            if(data.img) { imgEl.src = data.img; imgEl.classList.remove('hidden'); iconEl.classList.add('hidden'); }
-            else { imgEl.classList.add('hidden'); iconEl.classList.remove('hidden'); }
-            document.getElementById('messageModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
+// Fixed Professional Suggestions
+function loadFixedSuggestions() {
+    const container = document.getElementById('fixedSuggestions');
+    container.innerHTML = '';
 
-        function closeMessage() {
-            document.getElementById('messageModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
+    const fixedQuestions = [
+        "හොස්පිටල් ගැන",
+        "ප්‍රධාන ලේකම් කාර්යාලය",
+        "උපත් සහතිය ගන්නේ කොහොමද",
+        "සෞඛ්‍ය අමාත්‍යංශය",
+        "වාහන බුකින් tdfg"
+    ];
 
-        function searchLinks() {
-            let q = document.getElementById('searchInput').value.toLowerCase();
-            document.querySelectorAll('.link-card').forEach(c => {
-                c.style.display = c.innerText.toLowerCase().includes(q) ? '' : 'none';
+    fixedQuestions.forEach(question => {
+        const btn = document.createElement('button');
+        btn.className = 'suggestion-btn bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs px-4 py-2 rounded-2xl border border-blue-200 transition-all whitespace-nowrap';
+        btn.textContent = question;
+        btn.onclick = () => {
+            document.getElementById('chatInput').value = question;
+            sendMsg();
+        };
+        container.appendChild(btn);
+    });
+}
+
+    // Real-time suggestions while typing
+    function showSuggestions(text) {
+        const box = document.getElementById('suggestionsBox');
+        box.innerHTML = '';
+
+        if (text.length < 2) return;
+
+        const suggestions = [
+            "හොස්පිටල් ගැන",
+            "ප්‍රධාන ලේකම් කාර්යාලය",
+            "උපත් සහතිය ගන්නේ කොහොමද",
+            "සෞඛ්‍ය අමාත්‍යංශය",
+            "වාහන බුකින්",
+            "ඉඩම් ගැන තොරතුරු",
+            "උපත් සහතිය",
+            "ලේකම් කාර්යාලය",
+            "hospital"
+        ];
+
+        suggestions.forEach(s => {
+            if (s.toLowerCase().includes(text.toLowerCase())) {
+                const btn = document.createElement('button');
+                btn.className = 'suggestion-btn bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs px-3 py-1.5 rounded-xl border border-blue-200 transition-all';
+                btn.textContent = s;
+                btn.onclick = () => {
+                    document.getElementById('chatInput').value = s;
+                    sendMsg();
+                };
+                box.appendChild(btn);
+            }
+        });
+    }
+
+
+    async function logUnknownQuestion(question) {
+        if (question.length < 4) return;
+        try {
+            await fetch('log_unknown.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ question: question, lang: currentLang, timestamp: new Date().toISOString() })
             });
-            // Hide category headers if no results in that category
-            document.querySelectorAll('.category-container').forEach(sec => {
-                const hasVisible = sec.querySelectorAll('.link-card[style=""]').length > 0;
-                sec.style.display = hasVisible || q === "" ? '' : 'none';
-            });
-        }
+        } catch (e) {}
+    }
 
-        function toggleChat() { document.getElementById('chatBox').classList.toggle('active'); }
+    function sendMsg() {
+        const inputEl = document.getElementById('chatInput');
+        const body = document.getElementById('chatBody');
+        const userText = inputEl.value.trim();
+        if (!userText) return;
 
-        function sendMsg() {
-            let input = document.getElementById('chatInput');
-            let body = document.getElementById('chatBody');
-            if(!input.value) return;
-            body.innerHTML += `<div class='flex justify-end'><div class='bg-blue-600 text-white p-2 rounded-xl rounded-tr-none'>${input.value}</div></div>`;
-            let reply = "කරුණාකර 'ලේකම්' හෝ 'අමාත්‍යංශ' වැනි වචනයක් යොදා ප්‍රශ්නය අසන්න.";
-            if(input.value.includes("ලේකම්")) reply = "ප්‍රධාන ලේකම් කාර්යාලය කුරුණෑගල පිහිටා ඇත. දුරකථන: 0372231769";
-            setTimeout(() => {
-                body.innerHTML += `<div class='bg-white p-2 rounded-xl rounded-tl-none border'>${reply}</div>`;
-                body.scrollTop = body.scrollHeight;
-            }, 500);
-            input.value = "";
+        body.innerHTML += `<div class='flex justify-end'><div class='bg-blue-600 text-white p-3 rounded-2xl rounded-tr-none max-w-[80%]'>${userText}</div></div>`;
+
+        const reply = getResponse(userText);
+
+        setTimeout(() => {
+            body.innerHTML += `<div class='bg-white p-3 rounded-2xl rounded-tl-none border max-w-[80%]'>${reply}</div>`;
+            body.scrollTop = body.scrollHeight;
+
+            if (!detectIntent(userText)) {
+                logUnknownQuestion(userText);
+            }
+        }, 400);
+
+        inputEl.value = '';
+        document.getElementById('suggestionsBox').innerHTML = '';
+    }
+
+    // Initialize when chat opens
+    function toggleChat() {
+    const chatBox = document.getElementById('chatBox');
+    chatBox.classList.toggle('active');
+    
+    if (chatBox.classList.contains('active')) {
+        setTimeout(loadFixedSuggestions, 300);
+    }
+}
+
+    const messages = {
+        gov: { name: "Hon. Thissa Kumarasiri Warnasuriya", title: "Governor - NWP", text: "වයඹ පළාතේ සංවර්ධනය උදෙසා ඩිජිටල් තාක්ෂණය උපරිමයෙන් භාවිත කරමින් කාර්යක්ෂම රාජ්‍ය සේවාවක් සැපයීම අපගේ අරමුණයි.", img: "https://governor.nw.gov.lk/images/governor_img.jpg" },
+        cm: { name: "Chief Minister", title: "Executive Leadership", text: "No Message.", img: "" },
+        cs: { name: "Mr. I.M. Indika Ilangakoon", title: "Chief Secretary - NWP", text: "තොරතුරු තාක්ෂණය ඔස්සේ රාජ්‍ය පාලනය නවීකරණය කිරීම තුළින් පරිපාලන ක්‍රියාවලිය වඩාත් සරල හා වේගවත් කිරීමට අප බලාපොරොත්තු වෙමු.", img: "https://cs.nw.gov.lk/images/cs_img.jpg" }
+    };
+
+    function openMessage(type) {
+        const data = messages[type];
+        document.getElementById('modalName').innerText = data.name;
+        document.getElementById('modalTitle').innerText = data.title;
+        document.getElementById('modalText').innerText = `"${data.text}"`;
+        const imgEl = document.getElementById('modalImg');
+        const iconEl = document.getElementById('placeholderIcon');
+        if(data.img) { 
+            imgEl.src = data.img; 
+            imgEl.classList.remove('hidden'); 
+            iconEl.classList.add('hidden'); 
+        } else { 
+            imgEl.classList.add('hidden'); 
+            iconEl.classList.remove('hidden'); 
         }
-    </script>
+        document.getElementById('messageModal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMessage() {
+        document.getElementById('messageModal').classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+
+    function searchLinks() {
+        let q = document.getElementById('searchInput').value.toLowerCase();
+        document.querySelectorAll('.link-card').forEach(c => {
+            c.style.display = c.innerText.toLowerCase().includes(q) ? '' : 'none';
+        });
+        document.querySelectorAll('.category-container').forEach(sec => {
+            const visible = sec.querySelectorAll('.link-card:not([style*="display: none"])').length;
+            sec.style.display = (visible === 0 && q !== "") ? 'none' : '';
+        });
+    }
+
+    // Initialize event listeners
+    document.addEventListener("DOMContentLoaded", () => {
+        const chatInput = document.getElementById("chatInput");
+        
+        chatInput.addEventListener("keypress", function(e) {
+            if (e.key === "Enter") sendMsg();
+        });
+
+        chatInput.addEventListener("keyup", function() {
+            showSuggestions(this.value);
+        });
+    });
+</script>
 </body>
-
 </html>
-
-
