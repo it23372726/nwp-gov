@@ -18,8 +18,25 @@ $translations = [
         'cat_e' => 'ව්‍යවස්ථාපිත මණ්ඩල',
         'cat_f' => 'පොදු මාර්ගගත වෙබ් පද්ධති',
         'visit' => 'පිවිසෙන්න',
-        'bot_title' => 'NWPC AI සහායක',
-        'bot_msg' => 'ආයුබෝවන්! මම NWPC ඩිජිටල් සහායක. ඔබට උදව් කරන්නේ කෙසේද?',
+        'bot_title' => 'NWPC තොරතුරු සහායක',
+        'bot_msg' => 'ආයුබෝවන්! පළාත් සභා සේවා පිළිබඳ තොරතුරු මම සපයමි. පළමුව දෙපාර්තමේන්තුවක් තෝරන්න, ඉන්පසු ප්‍රශ්නයක් තෝරන්න — නැතහොත් ඔබේ ප්‍රශ්නය ලියන්න.',
+        'bot_disclaimer' => 'ස්වයංක්‍රීය තොරතුරු සහායකයකි — නිල උපදෙස් සඳහා අදාළ දෙපාර්තමේන්තුව හෝ 1919 අමතන්න.',
+        'bot_open' => 'තොරතුරු සහායක අරින්න',
+        'bot_status' => 'සක්‍රීය · ස්වයංක්‍රීය',
+        'quick_topics' => 'ඉක්මන් විෂයයන්',
+        'choose_department' => 'දෙපාර්තමේන්තුවක් තෝරන්න',
+        'suggested_questions' => 'යෝජිත ප්‍රශ්න',
+        'change_department' => 'දෙපාර්තමේන්තුව වෙනස් කරන්න',
+        'back' => 'ආපසු',
+        'more_questions' => 'තවත් ප්‍රශ්න',
+        'common_questions' => 'පොදු ප්‍රශ්න',
+        'chat_placeholder' => 'ඔබේ ප්‍රශ්නය මෙහි ලියන්න...',
+        'chat_you' => 'ඔබ',
+        'close_chat' => 'චැට් වසන්න',
+        'send_message' => 'පණිවිඩය යවන්න',
+        'typing' => 'පිළිතුර සකසමින්...',
+        'need_help' => 'උදව් අවශ්‍යද?',
+        'start_new_chat' => 'නව සංවාදයක්',
         'ask_secretary' => 'ප්‍රධාන ලේකම්ගෙන් අහන්න',
         'address' => 'වයඹ පළාත් සභා කාර්යාල සංකීරණය, කුරුණෑගල',
         'footer_text' => 'ඩිජිටල් අංශය - වයඹ පළාත් සභාව මගින් බලගන්වන ලදී',
@@ -44,8 +61,25 @@ $translations = [
         'cat_e' => 'Statutory Boards',
         'cat_f' => 'Public Online Systems',
         'visit' => 'Visit Site',
-        'bot_title' => 'NWPC AI Assistant',
-        'bot_msg' => 'Hello! I am NWPC Digital Assistant. How can I help you?',
+        'bot_title' => 'NWPC Information Assistant',
+        'bot_msg' => 'Hello! I can help with provincial council services. First choose a department, then pick a suggested question — or type your own.',
+        'bot_disclaimer' => 'Automated information assistant — for official advice, contact the relevant department or dial 1919.',
+        'bot_open' => 'Open Information Assistant',
+        'bot_status' => 'Online · Automated',
+        'quick_topics' => 'Quick topics',
+        'choose_department' => 'Choose a department',
+        'suggested_questions' => 'Suggested questions',
+        'change_department' => 'Change department',
+        'back' => 'Back',
+        'more_questions' => 'More questions',
+        'common_questions' => 'Common Questions',
+        'chat_placeholder' => 'Type your question here...',
+        'chat_you' => 'You',
+        'close_chat' => 'Close chat',
+        'send_message' => 'Send message',
+        'typing' => 'Preparing a response...',
+        'need_help' => 'Need help?',
+        'start_new_chat' => 'Start new conversation',
         'ask_secretary' => 'Ask Chief Secretary',
         'address' => 'Provincial Council Complex, Kurunegala',
         'footer_text' => 'Powered by Digital Division - NWPC',
@@ -70,8 +104,25 @@ $translations = [
         'cat_e' => 'சட்டரீதியான சபைகள்',
         'cat_f' => 'பொதுவான ஆன்லைன் அமைப்புகள்',
         'visit' => 'விஜயம் செய்யுங்கள்',
-        'bot_title' => 'NWPC AI உதவியாளர்',
-        'bot_msg' => 'வணக்கம்! நான் NWPC டிஜிட்டல் உதவியாளர். உங்களுக்கு நான் எவ்வாறு உதவ முடியும்?',
+        'bot_title' => 'NWPC தகவல் உதவியாளர்',
+        'bot_msg' => 'வணக்கம்! மாகாண சபை சேவைகள் பற்றி நான் உதவ முடியும். முதலில் ஒரு திணைக்களத்தைத் தேர்ந்தெடுங்கள், பிறகு ஒரு கேள்வியைத் தேர்ந்தெடுங்கள் — அல்லது உங்கள் கேள்வியை எழுதுங்கள்.',
+        'bot_disclaimer' => 'தானியங்கி தகவல் உதவியாளர் — அதிகாரப்பூர்வ ஆலோசனைக்கு தொடர்புடைய திணைக்களம் அல்லது 1919 ஐ அழைக்கவும்.',
+        'bot_open' => 'தகவல் உதவியைத் திற',
+        'bot_status' => 'செயலில் · தானியங்கி',
+        'quick_topics' => 'விரைவு தலைப்புகள்',
+        'choose_department' => 'திணைக்களத்தைத் தேர்ந்தெடுக்கவும்',
+        'suggested_questions' => 'பரிந்துரைக்கப்பட்ட கேள்விகள்',
+        'change_department' => 'திணைக்களத்தை மாற்று',
+        'back' => 'பின்செல்',
+        'more_questions' => 'மேலும் கேள்விகள்',
+        'common_questions' => 'பொதுவான கேள்விகள்',
+        'chat_placeholder' => 'உங்கள் கேள்வியை இங்கே எழுதுங்கள்...',
+        'chat_you' => 'நீங்கள்',
+        'close_chat' => 'அரட்டையை மூடு',
+        'send_message' => 'செய்தி அனுப்பு',
+        'typing' => 'பதில் தயாரிக்கப்படுகிறது...',
+        'need_help' => 'உதவி தேவையா?',
+        'start_new_chat' => 'புதிய உரையாடல்',
         'ask_secretary' => 'தலைமைச் செயலாளரிடம் கேளுங்கள்',
         'address' => 'மாகாண சபை வளாகம், குருணாகல்',
         'footer_text' => 'டிஜிட்டல் பிரிவினால் இயக்கப்படுகிறது - NWPC',
@@ -90,8 +141,10 @@ $t = $translations[$lang];
 
 // Include Knowledge Base
 include 'chatbot-knowledge.php';
+include 'chatbot-departments.php';
 
 $jsonKnowledge = json_encode($knowledgeBase, JSON_UNESCAPED_UNICODE);
+$jsonDepartments = json_encode($chatbotDepartments, JSON_UNESCAPED_UNICODE);
 
 $links = [
     'A' => [
@@ -159,14 +212,13 @@ $links = [
     <title><?php echo $t['title']; ?></title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="chatbot.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
         .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
         .whatsapp-pulse { animation: pulse-green 2s infinite; }
         @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
-        .chat-window { transition: all 0.3s ease; transform: translateY(120%); }
-        .chat-window.active { transform: translateY(0); }
         .category-container { position: relative; padding-bottom: 2rem; margin-bottom: 3rem; border-bottom: 2px dashed #e2e8f0; }
         .category-header { display: inline-flex; align-items: center; padding: 0.75rem 2rem; border-radius: 0 50px 50px 0; margin-left: -1.5rem; color: white; font-weight: bold; box-shadow: 4px 4px 15px rgba(0,0,0,0.1); }
         .bg-cat-A { background: linear-gradient(90deg, #1e3a8a, #3b82f6); }
@@ -178,10 +230,6 @@ $links = [
         @keyframes scale-up { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         .animate-scale-up { animation: scale-up 0.3s ease-out; }
 
-        /* Suggestion buttons style */
-        .suggestion-btn {
-            @apply bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs px-3 py-1.5 rounded-xl border border-blue-200 transition-all;
-        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -351,239 +399,14 @@ $links = [
     </footer>
 
 
-<!-- Chatbot -->
-<div class="fixed bottom-6 right-6 flex flex-col items-end space-y-4 z-50">
-    <a href="https://wa.me/94705995577" target="_blank" class="whatsapp-pulse bg-green-500 text-white px-6 py-3 rounded-full shadow-2xl flex items-center space-x-3 hover:bg-green-600 transition-all group">
-        <span class="font-bold text-sm hidden group-hover:block transition-all"><?php echo $t['ask_secretary']; ?></span>
-        <i class="fab fa-whatsapp text-2xl"></i>
-    </a>
-    <button onclick="toggleChat()" class="bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all">
-        <i class="fas fa-robot text-2xl"></i>
-    </button>
-</div>
+<a id="nwpcWhatsappFab" href="https://wa.me/94705995577" target="_blank" rel="noopener noreferrer" class="whatsapp-pulse fixed bottom-28 right-6 z-[9998] bg-green-500 text-white px-5 py-3 rounded-full shadow-2xl flex items-center space-x-3 hover:bg-green-600 transition-all group md:bottom-32">
+    <span class="font-bold text-sm hidden sm:group-hover:block transition-all"><?php echo $t['ask_secretary']; ?></span>
+    <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+</a>
 
-<!-- Professional Chat Window with Fixed Suggestions -->
-<div id="chatBox" class="chat-window fixed bottom-6 right-6 w-full max-w-[380px] md:max-w-[420px] lg:max-w-[460px] bg-white rounded-3xl shadow-2xl z-50 overflow-hidden border transition-all duration-300">
-    
-    <!-- Header -->
-    <div class="bg-blue-900 p-4 text-white flex justify-between items-center">
-        <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                <i class="fas fa-robot text-xl"></i>
-            </div>
-            <div>
-                <span class="font-bold text-sm"><?php echo $t['bot_title']; ?></span>
-            </div>
-        </div>
-        <button onclick="toggleChat()" class="text-white hover:text-red-300 text-2xl leading-none">&times;</button>
-    </div>
-
-    <!-- Chat Body -->
-    <div id="chatBody" class="h-[420px] md:h-[460px] lg:h-[480px] overflow-y-auto p-4 space-y-4 text-sm bg-slate-50">
-        <div class="bg-white p-4 rounded-2xl rounded-tl-none border shadow-sm">
-            <?php echo $t['bot_msg']; ?>
-        </div>
-    </div>
-
-    <!-- Fixed Suggested Questions -->
-    <div class="px-4 pt-2 pb-3 bg-white border-t">
-        <p class="text-xs text-gray-500 mb-2 pl-1">Common Questions</p>
-        <div id="fixedSuggestions" class="flex flex-wrap gap-2"></div>
-    </div>
-
-    <!-- Input Area -->
-    <div class="p-4 border-t bg-white">
-        <div class="flex space-x-2">
-            <input 
-                type="text" 
-                id="chatInput" 
-                class="flex-1 bg-slate-100 rounded-2xl px-5 py-3.5 text-sm outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400" 
-                placeholder="Type your question here..." 
-            >
-            <button onclick="sendMsg()" class="bg-blue-600 hover:bg-blue-700 text-white w-11 h-11 rounded-2xl flex items-center justify-center transition-all flex-shrink-0">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </div>
-    </div>
-</div>
+<?php include 'chatbot-widget.php'; ?>
 
     <script>
-    const currentLang = "<?php echo $lang; ?>";
-    const knowledgeBase = <?php echo $jsonKnowledge; ?>;
-
-    function normalize(text) {
-        return text.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, "").trim();
-    }
-
-    function wordSimilarity(w1, w2) {
-        if (!w1 || !w2) return 0;
-        const len = Math.max(w1.length, w2.length);
-        let dist = 0;
-        const dp = Array.from({length: w1.length + 1}, () => Array(w2.length + 1).fill(0));
-        for (let i = 0; i <= w1.length; i++) dp[i][0] = i;
-        for (let j = 0; j <= w2.length; j++) dp[0][j] = j;
-        for (let i = 1; i <= w1.length; i++) {
-            for (let j = 1; j <= w2.length; j++) {
-                const cost = w1[i-1] === w2[j-1] ? 0 : 1;
-                dp[i][j] = Math.min(dp[i-1][j] + 1, dp[i][j-1] + 1, dp[i-1][j-1] + cost);
-            }
-        }
-        dist = dp[w1.length][w2.length];
-        return Math.max(0, 1 - dist / len);
-    }
-
-    function detectIntent(input) {
-        const clean = normalize(input);
-        if (clean.length < 3) return null;
-
-        let bestMatch = null;
-        let bestScore = 0;
-        const userWords = clean.split(/\s+/).filter(w => w.length > 1);
-
-        knowledgeBase.forEach(item => {
-            let score = 0;
-            item.keywords.forEach(kw => {
-                const keyNorm = normalize(kw);
-                const keyWords = keyNorm.split(/\s+/);
-                let maxSim = 0;
-                userWords.forEach(u => {
-                    keyWords.forEach(k => {
-                        const sim = wordSimilarity(u, k);
-                        if (sim > maxSim) maxSim = sim;
-                    });
-                });
-                score += maxSim * (maxSim > 0.75 ? 9 : (maxSim > 0.55 ? 5 : 2));
-            });
-
-            if (score > bestScore) {
-                bestScore = score;
-                bestMatch = item;
-            }
-        });
-
-        return (bestScore >= 5.5) ? bestMatch : null;
-    }
-
-    function getResponse(input) {
-        const intent = detectIntent(input);
-        if (intent) {
-            return intent.responses[currentLang] || intent.responses["en"] || intent.responses["si"];
-        }
-        return getFallback();
-    }
-
-    function getFallback() {
-        const fallbacks = {
-            si: "කණගාටුයි, මට ඒ ගැන තොරතුරු නැහැ. කරුණාකර වෙනත් විදියකින් අහන්න හෝ ප්‍රධාන ලේකම් කාර්යාලයට සම්බන්ධ වන්න (037-2237169).",
-            en: "Sorry, I don't have information about that. Please try rephrasing your question or contact Chief Secretary's Office at 037-2237169.",
-            ta: "மன்னிக்கவும், அந்த தகவல் என்னிடம் இல்லை. வேறு விதமாக கேளுங்கள் அல்லது பிரதான செயலாளர் அலுவலகத்தை தொடர்பு கொள்ளவும் (037-2237169)."
-        };
-        return fallbacks[currentLang] || fallbacks.en;
-    }
-
-// Fixed Professional Suggestions
-function loadFixedSuggestions() {
-    const container = document.getElementById('fixedSuggestions');
-    container.innerHTML = '';
-
-    const fixedQuestions = [
-        "හොස්පිටල් ගැන",
-        "ප්‍රධාන ලේකම් කාර්යාලය",
-        "උපත් සහතිය ගන්නේ කොහොමද",
-        "සෞඛ්‍ය අමාත්‍යංශය",
-        "වාහන බුකින් tdfg"
-    ];
-
-    fixedQuestions.forEach(question => {
-        const btn = document.createElement('button');
-        btn.className = 'suggestion-btn bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs px-4 py-2 rounded-2xl border border-blue-200 transition-all whitespace-nowrap';
-        btn.textContent = question;
-        btn.onclick = () => {
-            document.getElementById('chatInput').value = question;
-            sendMsg();
-        };
-        container.appendChild(btn);
-    });
-}
-
-    // Real-time suggestions while typing
-    function showSuggestions(text) {
-        const box = document.getElementById('suggestionsBox');
-        box.innerHTML = '';
-
-        if (text.length < 2) return;
-
-        const suggestions = [
-            "හොස්පිටල් ගැන",
-            "ප්‍රධාන ලේකම් කාර්යාලය",
-            "උපත් සහතිය ගන්නේ කොහොමද",
-            "සෞඛ්‍ය අමාත්‍යංශය",
-            "වාහන බුකින්",
-            "ඉඩම් ගැන තොරතුරු",
-            "උපත් සහතිය",
-            "ලේකම් කාර්යාලය",
-            "hospital"
-        ];
-
-        suggestions.forEach(s => {
-            if (s.toLowerCase().includes(text.toLowerCase())) {
-                const btn = document.createElement('button');
-                btn.className = 'suggestion-btn bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs px-3 py-1.5 rounded-xl border border-blue-200 transition-all';
-                btn.textContent = s;
-                btn.onclick = () => {
-                    document.getElementById('chatInput').value = s;
-                    sendMsg();
-                };
-                box.appendChild(btn);
-            }
-        });
-    }
-
-
-    async function logUnknownQuestion(question) {
-        if (question.length < 4) return;
-        try {
-            await fetch('log_unknown.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ question: question, lang: currentLang, timestamp: new Date().toISOString() })
-            });
-        } catch (e) {}
-    }
-
-    function sendMsg() {
-        const inputEl = document.getElementById('chatInput');
-        const body = document.getElementById('chatBody');
-        const userText = inputEl.value.trim();
-        if (!userText) return;
-
-        body.innerHTML += `<div class='flex justify-end'><div class='bg-blue-600 text-white p-3 rounded-2xl rounded-tr-none max-w-[80%]'>${userText}</div></div>`;
-
-        const reply = getResponse(userText);
-
-        setTimeout(() => {
-            body.innerHTML += `<div class='bg-white p-3 rounded-2xl rounded-tl-none border max-w-[80%]'>${reply}</div>`;
-            body.scrollTop = body.scrollHeight;
-
-            if (!detectIntent(userText)) {
-                logUnknownQuestion(userText);
-            }
-        }, 400);
-
-        inputEl.value = '';
-        document.getElementById('suggestionsBox').innerHTML = '';
-    }
-
-    // Initialize when chat opens
-    function toggleChat() {
-    const chatBox = document.getElementById('chatBox');
-    chatBox.classList.toggle('active');
-    
-    if (chatBox.classList.contains('active')) {
-        setTimeout(loadFixedSuggestions, 300);
-    }
-}
-
     const messages = {
         gov: { name: "Hon. Thissa Kumarasiri Warnasuriya", title: "Governor - NWP", text: "වයඹ පළාතේ සංවර්ධනය උදෙසා ඩිජිටල් තාක්ෂණය උපරිමයෙන් භාවිත කරමින් කාර්යක්ෂම රාජ්‍ය සේවාවක් සැපයීම අපගේ අරමුණයි.", img: "https://governor.nw.gov.lk/images/governor_img.jpg" },
         cm: { name: "Chief Minister", title: "Executive Leadership", text: "No Message.", img: "" },
@@ -625,18 +448,6 @@ function loadFixedSuggestions() {
         });
     }
 
-    // Initialize event listeners
-    document.addEventListener("DOMContentLoaded", () => {
-        const chatInput = document.getElementById("chatInput");
-        
-        chatInput.addEventListener("keypress", function(e) {
-            if (e.key === "Enter") sendMsg();
-        });
-
-        chatInput.addEventListener("keyup", function() {
-            showSuggestions(this.value);
-        });
-    });
 </script>
 </body>
 </html>

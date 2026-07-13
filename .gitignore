@@ -1,0 +1,14 @@
+# Local secrets / caches
+chatbot-config.local.php
+.unknown_log_rate
+.match_intent_rate
+unknown_questions.log
+*.bak
+.DS_Store
+.cursor/
+
+# Dev / test tooling (not needed to host the chatbot)
+scripts/
+
+# Source charter JSON dumps (content is in chatbot-knowledge.php)
+*-citizen-charter.json
